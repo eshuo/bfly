@@ -1,0 +1,186 @@
+{
+  "type": "Container",
+  "height": 70.0,
+  "margin": "0,5,0,5",
+  "padding": "0,0,0,0",
+  "decoration": {
+    "color": "#ffffff",
+    "borderRadius": "0,0,0,0"
+  },
+  "child": {
+    "mainAxisAlignment": "center",
+    "crossAxisAlignment": "center",
+    "shrinkWrap": true,
+    "type": "Column",
+    "dataProp": {
+      "id": "ASPAGEAS202203251145441915000011",
+      "fieldMapping": {
+        "text.name": ""
+      },
+      "autoUpdate": false,
+      "pullUp": false,
+      "pullDown": false,
+      "updateInterval": 0,
+      "checkRuleList": [],
+      "url": "",
+      "inputFieldMapping": {}
+    },
+    "children": [
+      {
+        "type": "Container",
+        "height": 70.0,
+        "margin": "0,0,0,0",
+        "padding": "0,0,0,0",
+        "decoration": {
+          "color": "#ffffff",
+          "borderRadius": "0,0,0,0"
+        },
+        "dataProp": {
+          "id": "ASPAGEAS202203251145441915000012",
+          "fieldMapping": {
+            "text.name": ""
+          },
+          "autoUpdate": false,
+          "pullUp": false,
+          "pullDown": false,
+          "updateInterval": 0,
+          "checkRuleList": [],
+          "url": "",
+          "inputFieldMapping": {}
+        },
+        "child": {
+          "fit": "loose",
+          "type": "Stack",
+          "children": [
+            {
+              "type": "Container",
+              "height": 70.0,
+              "margin": "0,0,0,0",
+              "padding": "0,0,0,0",
+              "child": {
+                "borderRadius": "0,0,0,0",
+                "type": "ClipRRect",
+                "child": {
+                  "processKey": {},
+                  "fit": "fill",
+                  "type": "NetworkImage",
+                  "src": "${img}",
+                  "dataProp": {
+                    "id": "ASPAGEAS202203251145441915000013",
+                    "fieldMapping": {
+                      "img": "data[0].thumbnail"
+                    },
+                    "autoUpdate": false,
+                    "updateInterval": 0,
+                    "checkRuleList": [],
+                    "url": "/api/v1.0/app/infomation/article/list",
+                    "inputFieldMapping": {
+                      "page.currentPage": "2",
+                      "page.size": "1",
+                      "groupId": "appNews"
+                    }
+                  },
+                  "interactiveProp": {
+                    "id": "ASPAGEAS202203251145441915000013",
+                    "input": "",
+                    "output": "",
+                    "enableInteraction": true,
+                    "interactionStyles": [
+                      {
+                        "id": "ASINPSAS202203251145441915000009",
+                        "interactionId": "ASPAGEAS202203251145441915000013",
+                        "pageId": "ASDYNPAS202203171937441915000001",
+                        "interactionType": "PAGE_TARGET",
+                        "interactionTargetId": "article",
+                        "newTemplate": true,
+                        "interactionTargetType": "nativePage"
+                      },
+                      {
+                        "id": "ASINPSAS202203251145441915000010",
+                        "interactionId": "ASPAGEAS202203251145441915000013",
+                        "pageId": "ASDYNPAS202203171937441915000001",
+                        "interactionType": "VARIABLE",
+                        "originVariable": "id",
+                        "targetVariable": "${this.id}"
+                      }
+                    ],
+                    "enableScroll": false,
+                    "scrollStyles": []
+                  }
+                }
+              }
+            },
+            {
+              "alignment": "bottomCenter",
+              "type": "Container",
+              "margin": "5,0,5,0",
+              "padding": "0,0,0,0",
+              "decoration": {
+                "borderRadius": "0,0,0,0"
+              },
+              "child": {
+                "type": "Container",
+                "color": "#80000000",
+                "child": {
+                  "processKey": {},
+                  "overflow": "ellipsis",
+                  "maxLines": 1,
+                  "softWrap": false,
+                  "type": "Text",
+                  "data": "${title}",
+                  "dataProp": {
+                    "id": "ASPAGEAS202203251145441915000014",
+                    "fieldMapping": {
+                      "title": "data[0].title"
+                    },
+                    "autoUpdate": false,
+                    "updateInterval": 0,
+                    "checkRuleList": [],
+                    "url": "/api/v1.0/app/infomation/article/list",
+                    "inputFieldMapping": {
+                      "page.size": "1",
+                      "page.currentPage": "2",
+                      "groupId": "appNews"
+                    }
+                  },
+                  "interactiveProp": {
+                    "id": "ASPAGEAS202203251145441915000014",
+                    "input": "",
+                    "output": "",
+                    "enableInteraction": true,
+                    "interactionStyles": [
+                      {
+                        "id": "ASINPSAS202203251145441915000011",
+                        "interactionId": "ASPAGEAS202203251145441915000014",
+                        "pageId": "ASDYNPAS202203171937441915000001",
+                        "interactionType": "PAGE_TARGET",
+                        "interactionTargetId": "article",
+                        "newTemplate": true,
+                        "interactionTargetType": "nativePage"
+                      },
+                      {
+                        "id": "ASINPSAS202203251145441915000012",
+                        "interactionId": "ASPAGEAS202203251145441915000014",
+                        "pageId": "ASDYNPAS202203171937441915000001",
+                        "interactionType": "VARIABLE",
+                        "originVariable": "id",
+                        "targetVariable": "${this.id}"
+                      }
+                    ],
+                    "enableScroll": false,
+                    "scrollStyles": []
+                  },
+                  "style": {
+                    "fontWeight": "w400",
+                    "color": "#ffffff",
+                    "fontSize": 16.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
