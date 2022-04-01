@@ -1,0 +1,795 @@
+{
+  "id": "ASPAGEAS202203311503443242000006",
+  "type": "ELEMENT",
+  "elementType": "ROW",
+  "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"10px\",\"padding-bottom\":\"0px\",\"padding-left\":\"10px\",\"margin-top\":\"5px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"230px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"列\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\"}}",
+  "dataProp": {
+    "id": "ASPAGEAS202203311503443242000006",
+    "fieldMapping": {
+      "text.name": ""
+    },
+    "autoUpdate": false,
+    "updateInterval": 0,
+    "url": "",
+    "inputFieldMapping": {},
+    "checkRuleList": [],
+    "pullDown": null,
+    "pullUp": null
+  },
+  "interactiveProp": {
+    "id": "ASPAGEAS202203311503443242000006",
+    "input": "",
+    "output": "",
+    "enableInteraction": false,
+    "interactionStyles": [],
+    "enableScroll": false,
+    "scrollStyles": []
+  },
+  "elementName": "行",
+  "elementStyleAttribute": {
+    "widthStr": "100%",
+    "heightStr": "230px",
+    "margin": "0,5,0,0",
+    "padding": "10,0,10,0",
+    "borderRadius": "0,0,0,0",
+    "mainAxisAlignment": null,
+    "crossAxisAlignment": null
+  },
+  "elementElementConfig": {
+    "fillColor": "#ffffff",
+    "picture": "",
+    "strokeSize": null
+  },
+  "subPageElements": [
+    {
+      "id": "ASPAGEAS202203311503443242000007",
+      "type": "ELEMENT",
+      "elementType": "COLUMN",
+      "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"5px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"50%\",\"height\":\"220px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-radius\":\"0px\",\"border-style\":\"solid\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"列\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"picture\":\"\",\"dynamicName\":\"\",\"mainAxisAlignment\":\"start\",\"crossAxisAlignment\":\"start\"}}",
+      "dataProp": {
+        "id": "ASPAGEAS202203311503443242000007",
+        "fieldMapping": {
+          "text.name": ""
+        },
+        "autoUpdate": false,
+        "updateInterval": 0,
+        "url": "",
+        "inputFieldMapping": {},
+        "checkRuleList": [],
+        "pullDown": null,
+        "pullUp": null
+      },
+      "interactiveProp": {
+        "id": "ASPAGEAS202203311503443242000007",
+        "input": "",
+        "output": "",
+        "enableInteraction": false,
+        "interactionStyles": [],
+        "enableScroll": false,
+        "scrollStyles": []
+      },
+      "elementName": "列",
+      "elementStyleAttribute": {
+        "widthStr": "50%",
+        "heightStr": "220px",
+        "margin": "0,0,0,0",
+        "padding": "0,0,5,0",
+        "borderRadius": "0,0,0,0",
+        "dynamicName": "",
+        "mainAxisAlignment": "start",
+        "crossAxisAlignment": "start"
+      },
+      "elementElementConfig": {
+        "fillColor": "#ffffff",
+        "picture": "",
+        "strokeColor": "#bdc2d2",
+        "strokeSize": null
+      },
+      "subPageElements": [
+        {
+          "id": "ASPAGEAS202203311503443242000008",
+          "type": "ELEMENT",
+          "elementType": "STACK",
+          "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"220px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-color\":\"#ffffff\",\"border-width\":\"0px\",\"border-style\":\"solid\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"stack\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"picture\":\"\",\"dynamicName\":\"\",\"alignment\":\"bottomCenter\",\"fit\":\"expand\"}}",
+          "dataProp": {
+            "id": "ASPAGEAS202203311503443242000008",
+            "fieldMapping": {},
+            "autoUpdate": false,
+            "updateInterval": 0,
+            "url": "",
+            "inputFieldMapping": {},
+            "checkRuleList": [],
+            "pullDown": false,
+            "pullUp": false
+          },
+          "interactiveProp": {
+            "id": "ASPAGEAS202203311503443242000008",
+            "input": "",
+            "output": "",
+            "enableInteraction": false,
+            "interactionStyles": [],
+            "enableScroll": false,
+            "scrollStyles": []
+          },
+          "elementName": "stack",
+          "elementStyleAttribute": {
+            "widthStr": "100%",
+            "heightStr": "220px",
+            "margin": "0,0,0,0",
+            "padding": "0,0,0,0",
+            "borderRadius": "0,0,0,0",
+            "dynamicName": "",
+            "fit": "expand",
+            "alignment": "bottomCenter"
+          },
+          "elementElementConfig": {
+            "fillColor": "#ffffff",
+            "picture": "",
+            "strokeColor": "#ffffff",
+            "strokeSize": null
+          },
+          "subPageElements": [
+            {
+              "id": "ASPAGEAS202203311503443242000009",
+              "type": "ELEMENT",
+              "elementType": "IMAGE",
+              "styleProp": "{\"parentType\":\"element\",\"styles\":{\"overflow\":\"hidden\",\"background-color\":\"#E0E2EA\",\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"220px\",\"border-top-left-radius\":\"5px\",\"border-top-right-radius\":\"5px\",\"border-bottom-right-radius\":\"5px\",\"border-bottom-left-radius\":\"5px\"},\"datas\":{\"titleText\":\"标题文本\",\"linkUrl\":\"\",\"dynamicName\":\"${img}\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"processKey\":{},\"receiveInform\":\"\",\"alignment\":null,\"fit\":\"cover\"}}",
+              "dataProp": {
+                "id": "ASPAGEAS202203311503443242000009",
+                "fieldMapping": {
+                  "img": "data[0].thumbnail"
+                },
+                "autoUpdate": false,
+                "updateInterval": 0,
+                "url": "/api/v1.0/app/infomation/article/list",
+                "inputFieldMapping": {
+                  "page.size": "1",
+                  "page.currentPage": "1",
+                  "groupId": "baseNews"
+                },
+                "checkRuleList": [],
+                "pullDown": null,
+                "pullUp": null
+              },
+              "interactiveProp": {
+                "id": "ASPAGEAS202203311503443242000009",
+                "input": "",
+                "output": "",
+                "enableInteraction": true,
+                "interactionStyles": [
+                  {
+                    "id": "ASINPSAS202203311503443242000003",
+                    "interactionId": "ASPAGEAS202203311503443242000009",
+                    "pageId": "ASDYNPAS202203311503443242000001",
+                    "interactionType": "PAGE_TARGET",
+                    "interactionTargetId": "article",
+                    "newTemplate": true,
+                    "interactionTargetType": "nativePage"
+                  },
+                  {
+                    "id": "ASINPSAS202203311503443242000004",
+                    "interactionId": "ASPAGEAS202203311503443242000009",
+                    "pageId": "ASDYNPAS202203311503443242000001",
+                    "interactionType": "VARIABLE",
+                    "originVariable": "id",
+                    "targetVariable": "${this.id}"
+                  }
+                ],
+                "enableScroll": false,
+                "scrollStyles": []
+              },
+              "elementName": "图片",
+              "elementStyleAttribute": {
+                "widthStr": "100%",
+                "heightStr": "220px",
+                "margin": "0,0,0,0",
+                "padding": "0,0,0,0",
+                "borderRadius": "5,5,5,5",
+                "dynamicName": "${img}",
+                "alignment": null,
+                "fit": "cover"
+              },
+              "elementElementConfig": {
+                "processKey": {},
+                "receiveInform": ""
+              },
+              "subPageElements": []
+            },
+            {
+              "id": "ASPAGEAS202203311503443242000010",
+              "type": "ELEMENT",
+              "elementType": "TITLE",
+              "styleProp": "{\"parentType\":\"element\",\"styles\":{\"overflow\":\"hidden\",\"background-color\":\"#80000000\",\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"10px\",\"color\":\"#ffffff\",\"font-size\":\"16px\",\"width\":\"300px\",\"height\":\"40px\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"5px\",\"border-bottom-left-radius\":\"5px\",\"font-weight\":\"400\"},\"datas\":{\"text\":\"标题文本\",\"linkUrl\":\"\",\"dynamicName\":\"${title}\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"overflow\":\"ellipsis\",\"maxLines\":1,\"alignment\":\"bottomLeft\",\"processKey\":{},\"isLimitedBox\":false}}",
+              "dataProp": {
+                "id": "ASPAGEAS202203311503443242000010",
+                "fieldMapping": {
+                  "title": "data[0].title"
+                },
+                "autoUpdate": false,
+                "updateInterval": 0,
+                "url": "/api/v1.0/app/infomation/article/list",
+                "inputFieldMapping": {
+                  "page.size": "1",
+                  "page.currentPage": "1",
+                  "groupId": "baseNews"
+                },
+                "checkRuleList": [],
+                "pullDown": null,
+                "pullUp": null
+              },
+              "interactiveProp": {
+                "id": "ASPAGEAS202203311503443242000010",
+                "input": "",
+                "output": "",
+                "enableInteraction": true,
+                "interactionStyles": [
+                  {
+                    "id": "ASINPSAS202203311503443242000006",
+                    "interactionId": "ASPAGEAS202203311503443242000010",
+                    "pageId": "ASDYNPAS202203311503443242000001",
+                    "interactionType": "PAGE_TARGET",
+                    "interactionTargetId": "article",
+                    "newTemplate": true,
+                    "interactionTargetType": "nativePage"
+                  },
+                  {
+                    "id": "ASINPSAS202203311503443242000005",
+                    "interactionId": "ASPAGEAS202203311503443242000010",
+                    "pageId": "ASDYNPAS202203311503443242000001",
+                    "interactionType": "VARIABLE",
+                    "originVariable": "id",
+                    "targetVariable": "${this.id}"
+                  }
+                ],
+                "enableScroll": false,
+                "scrollStyles": []
+              },
+              "elementName": "标题",
+              "elementStyleAttribute": {
+                "widthStr": "300px",
+                "heightStr": "40px",
+                "margin": "10,0,0,0",
+                "padding": "0,0,0,0",
+                "borderRadius": "0,0,5,5",
+                "name": "标题文本",
+                "dynamicName": "${title}",
+                "fontSize": 16,
+                "color": "#ffffff",
+                "alignment": "bottomLeft",
+                "overflow": "ellipsis",
+                "maxLines": 1,
+                "isLimitedBox": false,
+                "fontWeight": "w400"
+              },
+              "elementElementConfig": {
+                "processKey": {},
+                "backgroundColor": "#80000000",
+                "strokeColor": "#bdc2d2",
+                "strokeSize": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ASPAGEAS202203311503443242000011",
+      "type": "ELEMENT",
+      "elementType": "COLUMN",
+      "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"50%\",\"height\":\"220px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"列\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"mainAxisAlignment\":\"center\",\"crossAxisAlignment\":\"center\"}}",
+      "dataProp": {
+        "id": "ASPAGEAS202203311503443242000011",
+        "fieldMapping": {
+          "text.name": ""
+        },
+        "autoUpdate": false,
+        "updateInterval": 0,
+        "url": "",
+        "inputFieldMapping": {},
+        "checkRuleList": [],
+        "pullDown": null,
+        "pullUp": null
+      },
+      "interactiveProp": {
+        "id": "ASPAGEAS202203311503443242000011",
+        "input": "",
+        "output": "",
+        "enableInteraction": false,
+        "interactionStyles": [],
+        "enableScroll": false,
+        "scrollStyles": []
+      },
+      "elementName": "列",
+      "elementStyleAttribute": {
+        "widthStr": "50%",
+        "heightStr": "220px",
+        "margin": "0,0,0,0",
+        "padding": "0,0,0,0",
+        "borderRadius": "0,0,0,0",
+        "mainAxisAlignment": "center",
+        "crossAxisAlignment": "center"
+      },
+      "elementElementConfig": {
+        "fillColor": "#ffffff",
+        "picture": "",
+        "strokeSize": null
+      },
+      "subPageElements": [
+        {
+          "id": "ASPAGEAS202203311503443242000012",
+          "type": "ELEMENT",
+          "elementType": "COLUMN",
+          "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"5px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"5px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"105px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-style\":\"solid\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"列\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"picture\":\"\",\"dynamicName\":\"\",\"mainAxisAlignment\":\"center\",\"crossAxisAlignment\":\"center\",\"fillAlignment\":null,\"fillFit\":null}}",
+          "dataProp": {
+            "id": "ASPAGEAS202203311503443242000012",
+            "fieldMapping": {
+              "text.name": ""
+            },
+            "autoUpdate": false,
+            "updateInterval": 0,
+            "url": "",
+            "inputFieldMapping": {},
+            "checkRuleList": [],
+            "pullDown": false,
+            "pullUp": false
+          },
+          "interactiveProp": {
+            "id": "ASPAGEAS202203311503443242000012",
+            "input": "",
+            "output": "",
+            "enableInteraction": false,
+            "interactionStyles": [],
+            "enableScroll": false,
+            "scrollStyles": []
+          },
+          "elementName": "列",
+          "elementStyleAttribute": {
+            "widthStr": "100%",
+            "heightStr": "105px",
+            "margin": "0,0,0,5",
+            "padding": "5,0,0,0",
+            "borderRadius": "0,0,0,0",
+            "dynamicName": "",
+            "mainAxisAlignment": "center",
+            "crossAxisAlignment": "center"
+          },
+          "elementElementConfig": {
+            "fillColor": "#ffffff",
+            "picture": "",
+            "strokeColor": "#bdc2d2",
+            "strokeSize": null,
+            "fillAlignment": null,
+            "fillFit": null
+          },
+          "subPageElements": [
+            {
+              "id": "ASPAGEAS202203311503443242000013",
+              "type": "ELEMENT",
+              "elementType": "STACK",
+              "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"105px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-style\":\"solid\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"stack\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"picture\":\"\",\"dynamicName\":\"\",\"alignment\":\"bottomCenter\",\"fit\":\"expand\",\"fillAlignment\":null,\"fillFit\":null}}",
+              "dataProp": {
+                "id": "ASPAGEAS202203311503443242000013",
+                "fieldMapping": {
+                  "text.name": ""
+                },
+                "autoUpdate": false,
+                "updateInterval": 0,
+                "url": "",
+                "inputFieldMapping": {},
+                "checkRuleList": [],
+                "pullDown": false,
+                "pullUp": false
+              },
+              "interactiveProp": {
+                "id": "ASPAGEAS202203311503443242000013",
+                "input": "",
+                "output": "",
+                "enableInteraction": false,
+                "interactionStyles": [],
+                "enableScroll": false,
+                "scrollStyles": []
+              },
+              "elementName": "stack",
+              "elementStyleAttribute": {
+                "widthStr": "100%",
+                "heightStr": "105px",
+                "margin": "0,0,0,0",
+                "padding": "0,0,0,0",
+                "borderRadius": "0,0,0,0",
+                "dynamicName": "",
+                "fit": "expand",
+                "alignment": "bottomCenter"
+              },
+              "elementElementConfig": {
+                "fillColor": "#ffffff",
+                "picture": "",
+                "strokeColor": "#bdc2d2",
+                "strokeSize": null,
+                "fillAlignment": null,
+                "fillFit": null
+              },
+              "subPageElements": [
+                {
+                  "id": "ASPAGEAS202203311503443242000014",
+                  "type": "ELEMENT",
+                  "elementType": "IMAGE",
+                  "styleProp": "{\"parentType\":\"element\",\"styles\":{\"overflow\":\"hidden\",\"background-color\":\"#E0E2EA\",\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"110px\",\"border-top-left-radius\":\"5px\",\"border-top-right-radius\":\"5px\",\"border-bottom-right-radius\":\"5px\",\"border-bottom-left-radius\":\"5px\"},\"datas\":{\"titleText\":\"标题文本\",\"linkUrl\":\"\",\"dynamicName\":\"${img}\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"processKey\":{},\"receiveInform\":\"\",\"alignment\":null,\"fit\":\"cover\"}}",
+                  "dataProp": {
+                    "id": "ASPAGEAS202203311503443242000014",
+                    "fieldMapping": {
+                      "img": "data[0].thumbnail"
+                    },
+                    "autoUpdate": false,
+                    "updateInterval": 0,
+                    "url": "/api/v1.0/app/infomation/article/list",
+                    "inputFieldMapping": {
+                      "page.currentPage": "2",
+                      "page.size": "1",
+                      "groupId": "baseNews"
+                    },
+                    "checkRuleList": [],
+                    "pullDown": null,
+                    "pullUp": null
+                  },
+                  "interactiveProp": {
+                    "id": "ASPAGEAS202203311503443242000014",
+                    "input": "",
+                    "output": "",
+                    "enableInteraction": true,
+                    "interactionStyles": [
+                      {
+                        "id": "ASINPSAS202203311503443242000008",
+                        "interactionId": "ASPAGEAS202203311503443242000014",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "VARIABLE",
+                        "originVariable": "id",
+                        "targetVariable": "${this.id}"
+                      },
+                      {
+                        "id": "ASINPSAS202203311503443242000007",
+                        "interactionId": "ASPAGEAS202203311503443242000014",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "PAGE_TARGET",
+                        "interactionTargetId": "article",
+                        "newTemplate": true,
+                        "interactionTargetType": "nativePage"
+                      }
+                    ],
+                    "enableScroll": false,
+                    "scrollStyles": []
+                  },
+                  "elementName": "图片",
+                  "elementStyleAttribute": {
+                    "widthStr": "100%",
+                    "heightStr": "110px",
+                    "margin": "0,0,0,0",
+                    "padding": "0,0,0,0",
+                    "borderRadius": "5,5,5,5",
+                    "dynamicName": "${img}",
+                    "alignment": null,
+                    "fit": "cover"
+                  },
+                  "elementElementConfig": {
+                    "processKey": {},
+                    "receiveInform": ""
+                  },
+                  "subPageElements": []
+                },
+                {
+                  "id": "ASPAGEAS202203311503443242000015",
+                  "type": "ELEMENT",
+                  "elementType": "TITLE",
+                  "styleProp": "{\"parentType\":\"element\",\"styles\":{\"overflow\":\"hidden\",\"background-color\":\"#80000000\",\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"10px\",\"color\":\"#ffffff\",\"font-size\":\"16px\",\"width\":\"300px\",\"height\":\"40px\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"5px\",\"border-bottom-left-radius\":\"5px\",\"font-weight\":\"400\"},\"datas\":{\"text\":\"标题文本\",\"linkUrl\":\"\",\"dynamicName\":\"${title}\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"overflow\":\"ellipsis\",\"maxLines\":1,\"alignment\":\"bottomLeft\",\"processKey\":{},\"isLimitedBox\":false}}",
+                  "dataProp": {
+                    "id": "ASPAGEAS202203311503443242000015",
+                    "fieldMapping": {
+                      "title": "data[0].title"
+                    },
+                    "autoUpdate": false,
+                    "updateInterval": 0,
+                    "url": "/api/v1.0/app/infomation/article/list",
+                    "inputFieldMapping": {
+                      "page.size": "1",
+                      "page.currentPage": "2",
+                      "groupId": "baseNews"
+                    },
+                    "checkRuleList": [],
+                    "pullDown": null,
+                    "pullUp": null
+                  },
+                  "interactiveProp": {
+                    "id": "ASPAGEAS202203311503443242000015",
+                    "input": "",
+                    "output": "",
+                    "enableInteraction": true,
+                    "interactionStyles": [
+                      {
+                        "id": "ASINPSAS202203311503443242000009",
+                        "interactionId": "ASPAGEAS202203311503443242000015",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "VARIABLE",
+                        "originVariable": "id",
+                        "targetVariable": "${this.id}"
+                      },
+                      {
+                        "id": "ASINPSAS202203311503443242000010",
+                        "interactionId": "ASPAGEAS202203311503443242000015",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "PAGE_TARGET",
+                        "interactionTargetId": "article",
+                        "newTemplate": true,
+                        "interactionTargetType": "nativePage"
+                      }
+                    ],
+                    "enableScroll": false,
+                    "scrollStyles": []
+                  },
+                  "elementName": "标题",
+                  "elementStyleAttribute": {
+                    "widthStr": "300px",
+                    "heightStr": "40px",
+                    "margin": "10,0,0,0",
+                    "padding": "0,0,0,0",
+                    "borderRadius": "0,0,5,5",
+                    "name": "标题文本",
+                    "dynamicName": "${title}",
+                    "fontSize": 16,
+                    "color": "#ffffff",
+                    "alignment": "bottomLeft",
+                    "overflow": "ellipsis",
+                    "maxLines": 1,
+                    "isLimitedBox": false,
+                    "fontWeight": "w400"
+                  },
+                  "elementElementConfig": {
+                    "processKey": {},
+                    "backgroundColor": "#80000000",
+                    "strokeColor": "#bdc2d2",
+                    "strokeSize": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ASPAGEAS202203311503443242000016",
+          "type": "ELEMENT",
+          "elementType": "COLUMN",
+          "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"5px\",\"margin-top\":\"5px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"105px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-style\":\"solid\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"列\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"picture\":\"\",\"dynamicName\":\"\",\"mainAxisAlignment\":\"center\",\"crossAxisAlignment\":\"center\",\"fillAlignment\":null,\"fillFit\":null}}",
+          "dataProp": {
+            "id": "ASPAGEAS202203311503443242000016",
+            "fieldMapping": {
+              "text.name": ""
+            },
+            "autoUpdate": false,
+            "updateInterval": 0,
+            "url": "",
+            "inputFieldMapping": {},
+            "checkRuleList": [],
+            "pullDown": false,
+            "pullUp": false
+          },
+          "interactiveProp": {
+            "id": "ASPAGEAS202203311503443242000016",
+            "input": "",
+            "output": "",
+            "enableInteraction": false,
+            "interactionStyles": [],
+            "enableScroll": false,
+            "scrollStyles": []
+          },
+          "elementName": "列",
+          "elementStyleAttribute": {
+            "widthStr": "100%",
+            "heightStr": "105px",
+            "margin": "0,5,0,0",
+            "padding": "5,0,0,0",
+            "borderRadius": "0,0,0,0",
+            "dynamicName": "",
+            "mainAxisAlignment": "center",
+            "crossAxisAlignment": "center"
+          },
+          "elementElementConfig": {
+            "fillColor": "#ffffff",
+            "picture": "",
+            "strokeColor": "#bdc2d2",
+            "strokeSize": null,
+            "fillAlignment": null,
+            "fillFit": null
+          },
+          "subPageElements": [
+            {
+              "id": "ASPAGEAS202203311503443242000017",
+              "type": "ELEMENT",
+              "elementType": "STACK",
+              "styleProp": "{\"parentType\":\"element\",\"styles\":{\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"105px\",\"background-color\":\"#ffffff\",\"overflow\":\"hidden\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-style\":\"solid\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"0px\",\"border-bottom-left-radius\":\"0px\"},\"datas\":{\"text\":\"stack\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"picture\":\"\",\"dynamicName\":\"\",\"alignment\":\"bottomCenter\",\"fit\":\"expand\",\"fillAlignment\":null,\"fillFit\":null}}",
+              "dataProp": {
+                "id": "ASPAGEAS202203311503443242000017",
+                "fieldMapping": {
+                  "text.name": ""
+                },
+                "autoUpdate": false,
+                "updateInterval": 0,
+                "url": "",
+                "inputFieldMapping": {},
+                "checkRuleList": [],
+                "pullDown": false,
+                "pullUp": false
+              },
+              "interactiveProp": {
+                "id": "ASPAGEAS202203311503443242000017",
+                "input": "",
+                "output": "",
+                "enableInteraction": false,
+                "interactionStyles": [],
+                "enableScroll": false,
+                "scrollStyles": []
+              },
+              "elementName": "stack",
+              "elementStyleAttribute": {
+                "widthStr": "100%",
+                "heightStr": "105px",
+                "margin": "0,0,0,0",
+                "padding": "0,0,0,0",
+                "borderRadius": "0,0,0,0",
+                "dynamicName": "",
+                "fit": "expand",
+                "alignment": "bottomCenter"
+              },
+              "elementElementConfig": {
+                "fillColor": "#ffffff",
+                "picture": "",
+                "strokeColor": "#bdc2d2",
+                "strokeSize": null,
+                "fillAlignment": null,
+                "fillFit": null
+              },
+              "subPageElements": [
+                {
+                  "id": "ASPAGEAS202203311503443242000018",
+                  "type": "ELEMENT",
+                  "elementType": "IMAGE",
+                  "styleProp": "{\"parentType\":\"element\",\"styles\":{\"overflow\":\"hidden\",\"background-color\":\"#E0E2EA\",\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"0px\",\"width\":\"100%\",\"height\":\"105px\",\"border-top-left-radius\":\"5px\",\"border-top-right-radius\":\"5px\",\"border-bottom-right-radius\":\"5px\",\"border-bottom-left-radius\":\"5px\"},\"datas\":{\"titleText\":\"标题文本\",\"linkUrl\":\"\",\"dynamicName\":\"${img}\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"processKey\":{},\"receiveInform\":\"\",\"alignment\":null,\"fit\":\"cover\"}}",
+                  "dataProp": {
+                    "id": "ASPAGEAS202203311503443242000018",
+                    "fieldMapping": {
+                      "img": "data[0].thumbnail"
+                    },
+                    "autoUpdate": false,
+                    "updateInterval": 0,
+                    "url": "/api/v1.0/app/infomation/article/list",
+                    "inputFieldMapping": {
+                      "page.size": "1",
+                      "page.currentPage": "3",
+                      "groupId": "baseNews"
+                    },
+                    "checkRuleList": [],
+                    "pullDown": null,
+                    "pullUp": null
+                  },
+                  "interactiveProp": {
+                    "id": "ASPAGEAS202203311503443242000018",
+                    "input": "",
+                    "output": "",
+                    "enableInteraction": true,
+                    "interactionStyles": [
+                      {
+                        "id": "ASINPSAS202203311503443242000011",
+                        "interactionId": "ASPAGEAS202203311503443242000018",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "VARIABLE",
+                        "originVariable": "id",
+                        "targetVariable": "${this.id}"
+                      },
+                      {
+                        "id": "ASINPSAS202203311503443242000012",
+                        "interactionId": "ASPAGEAS202203311503443242000018",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "PAGE_TARGET",
+                        "interactionTargetId": "article",
+                        "newTemplate": true,
+                        "interactionTargetType": "nativePage"
+                      }
+                    ],
+                    "enableScroll": false,
+                    "scrollStyles": []
+                  },
+                  "elementName": "图片",
+                  "elementStyleAttribute": {
+                    "widthStr": "100%",
+                    "heightStr": "105px",
+                    "margin": "0,0,0,0",
+                    "padding": "0,0,0,0",
+                    "borderRadius": "5,5,5,5",
+                    "dynamicName": "${img}",
+                    "alignment": null,
+                    "fit": "cover"
+                  },
+                  "elementElementConfig": {
+                    "processKey": {},
+                    "receiveInform": ""
+                  },
+                  "subPageElements": []
+                },
+                {
+                  "id": "ASPAGEAS202203311503443242000019",
+                  "type": "ELEMENT",
+                  "elementType": "TITLE",
+                  "styleProp": "{\"parentType\":\"element\",\"styles\":{\"overflow\":\"hidden\",\"background-color\":\"#80000000\",\"padding-top\":\"0px\",\"padding-right\":\"0px\",\"padding-bottom\":\"0px\",\"padding-left\":\"0px\",\"margin-top\":\"0px\",\"margin-right\":\"0px\",\"margin-bottom\":\"0px\",\"margin-left\":\"10px\",\"color\":\"#ffffff\",\"font-size\":\"16px\",\"width\":\"300px\",\"height\":\"40px\",\"border-color\":\"#bdc2d2\",\"border-width\":\"0px\",\"border-top-left-radius\":\"0px\",\"border-top-right-radius\":\"0px\",\"border-bottom-right-radius\":\"5px\",\"border-bottom-left-radius\":\"5px\",\"font-weight\":\"400\"},\"datas\":{\"text\":\"标题文本\",\"linkUrl\":\"\",\"dynamicName\":\"${title}\",\"slidingLinkAgeId\":\"\",\"slidingLinkAgeTarget\":\"\",\"overflow\":\"ellipsis\",\"maxLines\":1,\"alignment\":\"bottomCenter\",\"processKey\":{},\"isLimitedBox\":false}}",
+                  "dataProp": {
+                    "id": "ASPAGEAS202203311503443242000019",
+                    "fieldMapping": {
+                      "title": "data[0].title"
+                    },
+                    "autoUpdate": false,
+                    "updateInterval": 0,
+                    "url": "/api/v1.0/app/infomation/article/list",
+                    "inputFieldMapping": {
+                      "page.size": "1",
+                      "page.currentPage": "3",
+                      "groupId": "baseNews"
+                    },
+                    "checkRuleList": [],
+                    "pullDown": null,
+                    "pullUp": null
+                  },
+                  "interactiveProp": {
+                    "id": "ASPAGEAS202203311503443242000019",
+                    "input": "",
+                    "output": "",
+                    "enableInteraction": true,
+                    "interactionStyles": [
+                      {
+                        "id": "ASINPSAS202203311503443242000013",
+                        "interactionId": "ASPAGEAS202203311503443242000019",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "VARIABLE",
+                        "originVariable": "id",
+                        "targetVariable": "${this.id}"
+                      },
+                      {
+                        "id": "ASINPSAS202203311503443242000014",
+                        "interactionId": "ASPAGEAS202203311503443242000019",
+                        "pageId": "ASDYNPAS202203311503443242000001",
+                        "interactionType": "PAGE_TARGET",
+                        "interactionTargetId": "article",
+                        "newTemplate": true,
+                        "interactionTargetType": "nativePage"
+                      }
+                    ],
+                    "enableScroll": false,
+                    "scrollStyles": []
+                  },
+                  "elementName": "标题",
+                  "elementStyleAttribute": {
+                    "widthStr": "300px",
+                    "heightStr": "40px",
+                    "margin": "10,0,0,0",
+                    "padding": "0,0,0,0",
+                    "borderRadius": "0,0,5,5",
+                    "name": "标题文本",
+                    "dynamicName": "${title}",
+                    "fontSize": 16,
+                    "color": "#ffffff",
+                    "alignment": "bottomCenter",
+                    "overflow": "ellipsis",
+                    "maxLines": 1,
+                    "isLimitedBox": false,
+                    "fontWeight": "w400"
+                  },
+                  "elementElementConfig": {
+                    "processKey": {},
+                    "backgroundColor": "#80000000",
+                    "strokeColor": "#bdc2d2",
+                    "strokeSize": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
