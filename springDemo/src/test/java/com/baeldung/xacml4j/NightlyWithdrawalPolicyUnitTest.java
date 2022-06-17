@@ -32,7 +32,7 @@ import org.xacml4j.v30.types.StringExp;
 import org.xacml4j.v30.types.TimeExp;
 
 public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
-    
+
     private static final String POLICY_SET = "xacml4j/NightlyWithdrawalsPolicy.xml";
 
     @Test
@@ -42,58 +42,70 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
 
         // Categories.ACTION + Categories.ENVIRONMENT +  Categories.parse("urn:baeldung:atm:withdrawal")
 
+//      Categories  	ACTION("urn:oasis:names:tc:xacml:3.0:attribute-category:action"),
+//Categories	ENVIRONMENT("urn:oasis:names:tc:xacml:3.0:attribute-category:environment"),
+
+
+//        xml
+//                                    <AttributeDesignator
+//                                DataType="http://www.w3.org/2001/XMLSchema#time"
+//                                MustBePresent="true"
+//                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:environment"
+//                                AttributeId="urn:oasis:names:tc:xacml:1.0:environment:current-time"/>
+
+
         //attributeId + categoryId  = AttributeDesignator
 
         // Action category
         Attribute actionAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:action:action-id")
-            .value(StringExp.of("withdrawal"))
-            .build();
+                .value(StringExp.of("withdrawal"))
+                .build();
         Entity actionEntity = Entity.builder()
-            .attribute(actionAttribute)
-            .build();
+                .attribute(actionAttribute)
+                .build();
         Category actionCategory = Category.builder(Categories.ACTION)
-            .entity(actionEntity)
-            .build();
+                .entity(actionEntity)
+                .build();
 
         // Environment Category
         Attribute timeAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:environment:current-time")
-            .includeInResult(false)
-            .value(TimeExp.of("21:00:00"))
-            .build();
+                .includeInResult(false)
+                .value(TimeExp.of("21:00:00"))
+                .build();
         Entity timeEntity = Entity.builder()
-            .attribute(timeAttribute)
-            .build();
+                .attribute(timeAttribute)
+                .build();
 
         Category environmentCategory = Category.builder(Categories.ENVIRONMENT)
-            .entity(timeEntity)
-            .build();
+                .entity(timeEntity)
+                .build();
 
         // ATM category
         Attribute amountAttribute = Attribute.builder("urn:baeldung:atm:withdrawal:amount")
-            .value(DoubleExp.of("1200.00"))
-            .build();
+                .value(DoubleExp.of("1200.00"))
+                .build();
         Entity atmEntity = Entity.builder()
-            .attribute(amountAttribute)
-            .build();
+                .attribute(amountAttribute)
+                .build();
 
         Category atmCategory = Category.builder(Categories.parse("urn:baeldung:atm:withdrawal"))
-            .entity(atmEntity)
-            .build();
+                .entity(atmEntity)
+                .build();
 
         RequestContext request = RequestContext.builder()
-            .attributes(actionCategory, environmentCategory, atmCategory)
-            .build();
+                .attributes(actionCategory, environmentCategory, atmCategory)
+                .build();
 
         ResponseContext response = pdp.decide(request);
         assertNotNull(response);
         assertTrue("Shoud have at least one result", response.getResults() != null && !response.getResults()
-            .isEmpty());
+                .isEmpty());
 
         Result result = response.getResults()
-            .iterator()
-            .next();
+                .iterator()
+                .next();
         assertTrue("Evaluation should succeed", result.getStatus()
-            .isSuccess());
+                .isSuccess());
         assertEquals("Should DENY withdrawal", Decision.DENY, result.getDecision());
 
     }
