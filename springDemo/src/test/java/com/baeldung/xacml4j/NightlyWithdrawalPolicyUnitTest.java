@@ -117,47 +117,47 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
 
         // Action category
         Attribute actionAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:action:action-id")
-            .includeInResult(false)
-            .value(StringExp.of("withdrawal"))
-            .build();
+                .includeInResult(false)
+                .value(StringExp.of("withdrawal"))
+                .build();
         Entity actionEntity = Entity.builder()
-            .attribute(actionAttribute)
-            .build();
+                .attribute(actionAttribute)
+                .build();
         Category actionCategory = Category.builder(Categories.ACTION)
-            .entity(actionEntity)
-            .build();
+                .entity(actionEntity)
+                .build();
 
         // Environment Category
         Attribute timeAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:environment:current-time")
-            .includeInResult(false)
-            .value(TimeExp.of("21:00:00"))
-            .build();
+                .includeInResult(false)
+                .value(TimeExp.of("21:00:00"))
+                .build();
         Entity timeEntity = Entity.builder()
-            .attribute(timeAttribute)
-            .build();
+                .attribute(timeAttribute)
+                .build();
         Category environmentCategory = Category.builder(Categories.ENVIRONMENT)
-            .entity(timeEntity)
-            .build();
+                .entity(timeEntity)
+                .build();
 
         // ATM category
         Attribute amountAttribute = Attribute.builder("urn:baeldung:atm:withdrawal:amount")
-            .value(DoubleExp.of("499.00"))
-            .build();
+                .value(DoubleExp.of("499.00"))
+                .build();
         Entity atmEntity = Entity.builder()
-          .attribute(amountAttribute)
-          .build();
+                .attribute(amountAttribute)
+                .build();
         Category atmCategory = Category.builder(Categories.parse("urn:baeldung:atm:withdrawal"))
-          .entity(atmEntity)
-          .build();
+                .entity(atmEntity)
+                .build();
 
         RequestContext request = RequestContext.builder()
-          .attributes(actionCategory, environmentCategory, atmCategory)
-          .build();
+                .attributes(actionCategory, environmentCategory, atmCategory)
+                .build();
 
         ResponseContext response = pdp.decide(request);
         assertNotNull(response);
-        assertTrue("Shoud have at least one result", 
-          response.getResults() != null && !response.getResults().isEmpty());
+        assertTrue("Shoud have at least one result",
+                response.getResults() != null && !response.getResults().isEmpty());
 
         Result result = response.getResults().iterator().next();
         assertTrue("Evaluation should succeed", result.getStatus().isSuccess());
@@ -172,52 +172,52 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
 
         // Action category
         Attribute actionAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:action:action-id")
-          .includeInResult(false)
-          .value(StringExp.of("withdrawal"))
-          .build();
+                .includeInResult(false)
+                .value(StringExp.of("withdrawal"))
+                .build();
         Entity actionEntity = Entity.builder()
-          .attribute(actionAttribute)
-          .build();
+                .attribute(actionAttribute)
+                .build();
         Category actionCategory = Category.builder(Categories.ACTION)
-          .entity(actionEntity)
-          .build();
+                .entity(actionEntity)
+                .build();
 
         // Environment Category
         Attribute timeAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:environment:current-time")
-          .includeInResult(false)
-          .value(TimeExp.of("12:00:00"))
-          .build();
+                .includeInResult(false)
+                .value(TimeExp.of("12:00:00"))
+                .build();
         Entity timeEntity = Entity.builder()
-          .attribute(timeAttribute)
-          .build();
+                .attribute(timeAttribute)
+                .build();
         Category environmentCategory = Category.builder(Categories.ENVIRONMENT)
-          .entity(timeEntity)
-          .build();
+                .entity(timeEntity)
+                .build();
 
         // ATM category
         Attribute amountAttribute = Attribute.builder("urn:baeldung:atm:withdrawal:amount")
-          .value(DoubleExp.of("2000.00"))
-          .build();
+                .value(DoubleExp.of("2000.00"))
+                .build();
         Entity atmEntity = Entity.builder()
-          .attribute(amountAttribute)
-          .build();
+                .attribute(amountAttribute)
+                .build();
 
         Category atmCategory = Category.builder(Categories.parse("urn:baeldung:atm:withdrawal"))
-          .entity(atmEntity)
-          .build();
+                .entity(atmEntity)
+                .build();
 
         RequestContext request = RequestContext.builder()
-          .attributes(actionCategory, environmentCategory, atmCategory)
-          .build();
+                .attributes(actionCategory, environmentCategory, atmCategory)
+                .build();
 
         ResponseContext response = pdp.decide(request);
         assertNotNull(response);
         assertTrue("Shoud have at least one result", response.getResults() != null && !response.getResults()
-          .isEmpty());
+                .isEmpty());
 
         Result result = response.getResults()
-          .iterator()
-          .next();
+                .iterator()
+                .next();
         assertTrue("Evaluation should succeed", result.getStatus().isSuccess());
         assertEquals("Should PERMIT withdrawal", Decision.PERMIT, result.getDecision());
 
@@ -225,11 +225,11 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
 
     private PolicyDecisionPoint buildPDP(String... policyResources) throws Exception {
         PolicyRepository repository = new InMemoryPolicyRepository("tes-repository", FunctionProviderBuilder.builder()
-          .defaultFunctions()
-          .build(),
-        DecisionCombiningAlgorithmProviderBuilder.builder()
-            .withDefaultAlgorithms()
-            .create());
+                .defaultFunctions()
+                .build(),
+                DecisionCombiningAlgorithmProviderBuilder.builder()
+                        .withDefaultAlgorithms()
+                        .create());
 
         List<CompositeDecisionRule> policies = new ArrayList<CompositeDecisionRule>(policyResources.length);
         for (String policyResource : policyResources) {
@@ -239,12 +239,12 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
         }
 
         return PolicyDecisionPointBuilder.builder("testPdp")
-          .policyRepository(repository)
-          .pip(PolicyInformationPointBuilder.builder("testPip")
-          .defaultResolvers()
-          .build())
-          .rootPolicy(policies.get(0))
-          .build();
+                .policyRepository(repository)
+                .pip(PolicyInformationPointBuilder.builder("testPip")
+                        .defaultResolvers()
+                        .build())
+                .rootPolicy(policies.get(0))
+                .build();
     }
 
 }
