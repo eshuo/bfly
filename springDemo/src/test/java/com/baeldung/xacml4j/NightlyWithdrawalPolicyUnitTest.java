@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
 import org.junit.Test;
 import org.xacml4j.v20.Xacml20TestUtility;
 import org.xacml4j.v30.Attribute;
