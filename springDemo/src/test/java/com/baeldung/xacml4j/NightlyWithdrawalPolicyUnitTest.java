@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
 import org.junit.Test;
 import org.xacml4j.v20.Xacml20TestUtility;
 import org.xacml4j.v30.Attribute;
@@ -38,6 +39,10 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
     public void testWhenNightlyWithdrawalOver500_thenFail() throws Exception {
 
         PolicyDecisionPoint pdp = buildPDP(POLICY_SET);
+
+        // Categories.ACTION + Categories.ENVIRONMENT +  Categories.parse("urn:baeldung:atm:withdrawal")
+
+        //attributeId + categoryId  = AttributeDesignator
 
         // Action category
         Attribute actionAttribute = Attribute.builder("urn:oasis:names:tc:xacml:1.0:action:action-id")
