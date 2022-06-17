@@ -13,9 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>springDemo</name>
     <description>springDemo</description>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,11 +26,88 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- dependency>
-            <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-utils</artifactId>
-            <version>0.10.0</version>
-        </dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>${spring-security-oauth2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.scribejava</groupId>
+            <artifactId>scribejava-apis</artifactId>
+            <version>${scribejava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.crypto.tink</groupId>
+            <artifactId>tink</artifactId>
+            <version>${tink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.passay</groupId>
+            <artifactId>passay</artifactId>
+            <version>${passay.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cryptacular</groupId>
+            <artifactId>cryptacular</artifactId>
+            <version>${cryptacular.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+            <version>${jasypt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>${jsch.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sshd</groupId>
+            <artifactId>sshd-core</artifactId>
+            <version>${apache-mina.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xacml4j</groupId>
+            <artifactId>xacml-core</artifactId>
+            <version>${xacml4j.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.xacml4j</groupId>
+            <artifactId>xacml-test</artifactId>
+            <version>${xacml4j.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.mahout</groupId>
             <artifactId>mahout-examples</artifactId>
@@ -55,6 +130,21 @@
         </dependency>
 
     </dependencies>
+
+    <properties>
+        <scribejava.version>5.6.0</scribejava.version>
+        <passay.version>1.3.1</passay.version>
+        <tink.version>1.2.2</tink.version>
+        <cryptacular.version>1.2.2</cryptacular.version>
+        <jasypt.version>1.9.2</jasypt.version>
+        <bouncycastle.version>1.58</bouncycastle.version>
+        <jsch.version>0.1.55</jsch.version>
+        <apache-mina.version>2.5.1</apache-mina.version>
+        <spring-security-oauth2.version>2.4.0.RELEASE</spring-security-oauth2.version>
+        <xacml4j.version>1.4.0</xacml4j.version>
+        <java.version>1.8</java.version>
+    </properties>
+
 
     <build>
         <plugins>
