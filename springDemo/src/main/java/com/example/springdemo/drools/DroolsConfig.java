@@ -1,8 +1,10 @@
-package com.example.drools;
+package com.example.springdemo.drools;
 
 import org.kie.api.KieBase;
 import org.kie.api.KieServices;
-import org.kie.api.builder.*;
+import org.kie.api.builder.KieBuilder;
+import org.kie.api.builder.KieFileSystem;
+import org.kie.api.builder.KieRepository;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.internal.io.ResourceFactory;
@@ -24,7 +26,7 @@ import java.io.IOException;
  */
 @Configuration
 public class DroolsConfig {
-
+    //指定规则文件存放的目录
     private static final String RULES_PATH = "rules/";
 
     @Bean
@@ -47,12 +49,7 @@ public class DroolsConfig {
     public KieContainer kieContainer() throws IOException {
         final KieRepository kieRepository = getKieServices().getRepository();
 
-        kieRepository.addKieModule(new KieModule() {
-            @Override
-            public ReleaseId getReleaseId() {
-                return kieRepository.getDefaultReleaseId();
-            }
-        });
+        kieRepository.addKieModule(kieRepository::getDefaultReleaseId);
 
         KieBuilder kieBuilder = getKieServices().newKieBuilder(kieFileSystem());
         kieBuilder.buildAll();
@@ -70,6 +67,8 @@ public class DroolsConfig {
         return kieContainer().getKieBase();
     }
 
+    // 不能反复被使用，释放资源后需要重新获取。
+    // @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     @Bean
     @ConditionalOnMissingBean(KieSession.class)
     public KieSession kieSession() throws IOException {
@@ -81,5 +80,4 @@ public class DroolsConfig {
     public KModuleBeanFactoryPostProcessor kiePostProcessor() {
         return new KModuleBeanFactoryPostProcessor();
     }
-
 }
