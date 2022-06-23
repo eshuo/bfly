@@ -1,9 +1,0 @@
-package helloworld
-
-rule "helloworld"
-
-when
-    eval(true)
-then
-    System.out.println("HelloWorld");
-end
