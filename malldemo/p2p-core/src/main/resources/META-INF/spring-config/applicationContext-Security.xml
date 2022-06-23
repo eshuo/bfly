@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                      http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/security
+                      http://www.springframework.org/schema/security/spring-security.xsd"
+       default-lazy-init="true">
+
+
+    <bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder"/>
+    <!-- 访问决策管理器，这里使用AffirmativeBased，并加入一个自定义的投票器DynamicRoleVoter -->
+    <bean id="accessDecisionManager" class="info.bfly.archer.user.service.impl.MyUnanimousBased">
+        <constructor-arg>
+            <list>
+                <!-- <bean class="org.springframework.security.access.vote.RoleVoter"> -->
+                <!-- <property name="rolePrefix" value="" /> -->
+                <!-- </bean> -->
+                <bean class="org.springframework.security.web.access.expression.MyWebExpressionVoter">
+                    <property name="rolePrefix" value=""/>
+                </bean>
+                <ref bean="menuPermissionVoter"/>
+                <ref bean="urlMappingPermissionVoter"/>
+                <ref bean="securityResourcesPermissionVoter"/>
+                <!-- <bean -->
+                <!-- class="org.springframework.security.access.vote.AuthenticatedVoter" /> -->
+            </list>
+        </constructor-arg>
+        <!-- <property name="allowIfAllAbstainDecisions" value="true"></property> -->
+    </bean>
+
+    <bean id="accessDeniedHandler" class="info.bfly.archer.user.service.impl.MyAccessDeniedHandler">
+        <property name="accessDeniedUrl" value="/error/403.htm"/>
+    </bean>
+
+    <!-- 停用权限 -->
+    <sec:http pattern="/javax.faces.resource/**" security="none"/>
+    <sec:http pattern="/static/**" security="none"/>
+    <sec:http pattern="/themes/*/resources/**" security="none"/>
+    <sec:http pattern="/toHtml/**" security="none"/>
+    <sec:http pattern="/upload/**" security="none"/>
+    <sec:http pattern="/ImageUpload/**" security="none"/>
+    <sec:http pattern="/ScrawlUp/**" security="none"/>
+    <sec:http pattern="/FileUp/**" security="none"/>
+    <sec:http pattern="/GetRemoteImage/**" security="none"/>
+    <sec:http pattern="/ImageManager/**" security="none"/>
+    <sec:http pattern="/GetMovie/**" security="none"/>
+    <sec:http pattern="/verifyCodeServlet/**" security="none"/>
+    <sec:http pattern="/activateAccount/**" security="none"/>
+    <sec:http pattern="/sina_weibo_auth/**" security="none"/>
+    <sec:http pattern="/qq_auth_return/**" security="none"/>
+    <sec:http pattern="/payreturn/**" security="none"/>
+    <sec:http pattern="/pay/**" security="none"/>
+    <sec:http pattern="/error/**" security="none"/>
+
+    <sec:http entry-point-ref="loginUrlEntryPoint" use-expressions="true" authentication-manager-ref="webAuthenticationManager" access-decision-manager-ref="accessDecisionManager">
+        <sec:anonymous enabled="true" key="doesNotMatter" username="anonymous" granted-authority="ROLE_ANONYMOUS"/>
+        <!-- 是按照顺序加载和过滤么？ 结论：最后一个优先 -->
+        <sec:intercept-url pattern="/re_active" access="hasRole('INACTIVE')"/>
+        <sec:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN') and not hasRole('INACTIVE')"/>
+        <sec:intercept-url pattern="/user/**" access="hasRole('USER') and not hasRole('INACTIVE')"/>
+        <sec:intercept-url pattern="/mobile/user/**" access="hasRole('USER') and not hasRole('INACTIVE')"/>
+        <sec:intercept-url pattern="/test/test" access="hasRole('test_q')"/>
+        <sec:intercept-url pattern="/weixin/user/**" access="hasRole('USER') and not hasRole('INACTIVE')"/>
+        <sec:intercept-url pattern="/themes/**" access="denyAll"/>
+        <sec:intercept-url pattern="/backup/**" access="denyAll"/>
+        <sec:intercept-url pattern="/bAuth/**" access="SECURITY_RESOURCES_PERMISSION"/>
+        <sec:intercept-url pattern="/**" access="MENU_PERMISSION"/>
+        <sec:intercept-url pattern="/**" access="URL_MAPPING_PERMISSION"/>
+        <sec:intercept-url pattern="/**" access="not hasRole('INACTIVE')"/>
+        <sec:session-management session-authentication-strategy-ref="sas" session-authentication-error-url="/logout">
+        </sec:session-management>
+
+        <sec:access-denied-handler ref="accessDeniedHandler"/>
+
+        <!--remeberMe 过滤器 -->
+        <sec:custom-filter ref="rememberMeAuthenticationFilter" position="REMEMBER_ME_FILTER"/>
+
+        <!-- 登录过滤器 -->
+        <sec:custom-filter after="FORM_LOGIN_FILTER" ref="loginFilter"/>
+        <sec:custom-filter before="FORM_LOGIN_FILTER" ref="weixinLoginFilter"/>
+        <sec:custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter"/>
+
+        <!-- 注销过滤器 -->
+        <sec:custom-filter after="LOGOUT_FILTER" ref="logoutFilter"/>
+        <sec:custom-filter before="LOGOUT_FILTER" ref="weixinLogoutFilter"/>
+
+        <sec:csrf disabled="true"/>
+        <!--     <csrf token-repository-ref="tokenRepository" /> -->
+    </sec:http>
+
+
+    <sec:global-method-security pre-post-annotations="enabled" secured-annotations="enabled">
+        <sec:expression-handler ref="securityExpressionRoot"/>
+
+
+    </sec:global-method-security>
+
+    <bean id="securityExpressionRoot" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+        <property name="defaultRolePrefix" value=""/>
+       <!-- <property name="permissionEvaluator" ref="customPermissionEvaluator"/>-->
+    </bean>
+
+    <bean id="customPermissionEvaluator" class="org.springframework.security.access.CustomPermissionEvaluator"/>
+    <bean id="sas" class="org.springframework.security.web.authentication.session.CompositeSessionAuthenticationStrategy">
+        <constructor-arg>
+            <list>
+                <bean class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+                    <constructor-arg ref="sessionRegistry"/>
+                    <property name="maximumSessions" value="2"/>
+                    <!--<property name="exceptionIfMaximumExceeded" value="true"/>-->
+                </bean>
+                <bean class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy">
+                </bean>
+                <bean class="org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy">
+                    <constructor-arg ref="sessionRegistry"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="tokenRepository" class="org.springframework.security.web.csrf.CookieCsrfTokenRepository">
+        <property name="cookieHttpOnly" value="false"/>
+    </bean>
+    <bean id="concurrencyFilter" class="info.bfly.archer.user.service.impl.MyConcurrentSessionFilter">
+        <constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+        <constructor-arg name="expiredUrl" value="/"/>
+    </bean>
+
+    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+
+    <!-- 认证切入点，这里使用它的目的是保证当用户登录之前就访问前后台时，会跳转到不同的登录页面 -->
+    <bean id="loginUrlEntryPoint" class="info.bfly.archer.user.service.impl.LoginUrlEntryPoint">
+        <property name="dispatcherRules">
+            <map><!--
+                <entry key="weixin" value="/weixinlogin"/>
+                <entry key="mobile" value="/memberLoginMobile"/>-->
+                <entry key="admin" value="/404"/>
+                <entry key="user" value="/memberLoginPage"/>
+                <entry key="bAuth" value="/404"/>
+            </map>
+        </property>
+        <property name="defaultTargetUrl" value="/memberLoginPage"/>
+        <property name="useModalBox" value="false"/>
+    </bean>
+    <!-- 登录过滤器，验证前台用户 -->
+    <bean id="loginFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+        <property name="sessionAuthenticationStrategy" ref="sas"/>
+        <property name="authenticationManager" ref="webAuthenticationManager"/>
+        <property name="rememberMeServices" ref="rememberMeServices"/>
+        <property name="authenticationFailureHandler" ref="failureHandler"/>
+        <property name="authenticationSuccessHandler" ref="successHandler"/>
+        <property name="filterProcessesUrl" value="/memberLogin"/>
+    </bean>
+
+    <!-- weixin登录过滤器，验证前台用户 -->
+    <bean id="weixinLoginFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+        <property name="sessionAuthenticationStrategy" ref="sas"/>
+        <property name="authenticationManager" ref="webAuthenticationManager"/>
+        <property name="rememberMeServices" ref="rememberMeServices"/>
+        <property name="authenticationFailureHandler" ref="weixinFailureHandler"/>
+        <property name="authenticationSuccessHandler" ref="weixinSuccessHandler"/>
+        <property name="filterProcessesUrl" value="/weixin_login"/>
+    </bean>
+
+    <bean id="failureHandler" class="info.bfly.archer.user.service.impl.MyUrlAuthenticationFailureHandler">
+        <!-- FIXME:登录失败以后的url就变了，如果用户直接访问这个登录失败的url，会提示 Authentication method not supported: GET -->
+        <property name="useForward" value="true"/>
+        <property name="defaultFailureUrl" value="/memberLoginPage?error=true"/>
+    </bean>
+
+    <bean id="successHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <!-- <property name="useReferer" value="true" /> -->
+        <!-- <property name="alwaysUseDefaultTargetUrl" value="false" /> -->
+        <property name="defaultTargetUrl" value="/"/>
+    </bean>
+
+    <bean id="weixinFailureHandler" class="info.bfly.archer.user.service.impl.MyUrlAuthenticationFailureHandler">
+        <!-- FIXME:登录失败以后的url就变了，如果用户直接访问这个登录失败的url，会提示 Authentication method not supported: GET -->
+        <property name="useForward" value="true"/>
+        <property name="defaultFailureUrl" value="/weixinlogin?error=true"/>
+    </bean>
+
+    <bean id="weixinSuccessHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <!-- <property name="useReferer" value="true" /> -->
+        <!-- <property name="alwaysUseDefaultTargetUrl" value="false" /> -->
+        <property name="defaultTargetUrl" value="/weixin/user/index"/>
+    </bean>
+    <!-- 注销过滤器，完成前台用户注销时的定向功能 -->
+    <bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <constructor-arg value="/"/>
+        <constructor-arg>
+            <list>
+                <bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+                <ref bean="rememberMeServices"/>
+            </list>
+        </constructor-arg>
+        <property name="filterProcessesUrl" value="/logout"/>
+    </bean>
+    <!-- 注销过滤器，完成前台用户注销时的定向功能 -->
+    <bean id="weixinLogoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <constructor-arg value="/weixinlogin"/>
+        <constructor-arg>
+            <list>
+                <bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+                <ref bean="rememberMeServices"/>
+            </list>
+        </constructor-arg>
+        <property name="filterProcessesUrl" value="/weixin/logout"/>
+    </bean>
+
+
+    <!-- Automatically receives AuthenticationEvent messages -->
+    <bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:org/springframework/security/messages/messages_zh_CN"/>
+    </bean>
+
+
+    <!-- remember me Configuration start -->
+    <!-- 记住密码功能(COOKIE方式) -->
+    <bean id="rememberMeAuthenticationFilter" class="info.bfly.archer.user.service.impl.MyRememberMeAuthenticationFilter">
+        <constructor-arg name="rememberMeServices" ref="rememberMeServices"/>
+        <constructor-arg name="authenticationManager" ref="webAuthenticationManager"/>
+    </bean>
+    <bean id="rememberMeServices" class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">
+        <constructor-arg name="userDetailsService" ref="customUserDetailsService"/>
+        <constructor-arg name="key" value="bfly-archer"/>
+        <property name="alwaysRemember" value="false"/>
+        <property name="tokenValiditySeconds" value="1209600"><!--14天 -->
+        </property>
+        <property name="parameter" value="security_remember_me"/>
+    </bean>
+    <bean id="rememberMeAuthenticationProvider" class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+        <constructor-arg name="key" value="bfly-archer"/>
+    </bean>
+    <!--remember me Configuration end-->
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+
+    <bean id="tokenStore" class="info.bfly.archer.oauth2.service.impl.OAuth2ServiceTokenStore">
+        <constructor-arg ref="oAuth2AccessTokenService"/>
+        <constructor-arg ref="oAuth2RefreshTokenService"/>
+    </bean>
+
+
+</beans>
