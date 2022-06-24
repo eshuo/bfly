@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.qlexpressdemo.mapper.ParamInfoMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.qlexpressdemo.entity.ParamInfo">
+        <id column="id" property="id" />
+        <result column="field" property="field" />
+        <result column="title" property="title" />
+        <result column="type" property="type" />
+        <result column="c_info" property="cInfo" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, field, title, type, c_info
+    </sql>
+
+</mapper>
